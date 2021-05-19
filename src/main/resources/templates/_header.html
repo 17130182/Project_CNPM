@@ -1,0 +1,203 @@
+
+<header id="aa-header" xmlns:th="http://www.thymeleaf.org">
+	<!-- start header top  -->
+	<div class="aa-header-top">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="aa-header-top-area">
+						<!-- start header top left -->
+						<div class="aa-header-top-left">
+							<div class="cellphone hidden-xs">
+								<p>
+									<span class="fas fa-home"></span>Website bán hàng nông sản
+								</p>
+							</div>
+							<!-- start language -->
+							<div class="aa-language">
+								<div class="dropdown">
+									<a class="btn dropdown-toggle" href="#" type="button"
+										id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true"
+										aria-expanded="true"> <img src="img/flag/vietnam.png"
+										alt="english flag">Việt Nam
+									</a>
+								</div>
+							</div>
+							<!-- / language -->
+
+							<!-- start cellphone -->
+							<div class="cellphone hidden-xs">
+								<p>
+									<span class="fa fa-phone"></span>035-3264-243
+								</p>
+							</div>
+							<!-- / cellphone -->
+						</div>
+						<!-- / header top left -->
+						<div class="aa-header-top-right">
+							<ul class="aa-head-top-nav-right" th:if="${#request.userPrincipal == null}">
+								<li class="hidden-xs"><a href="/dangky">Đăng ký</a></li>
+								<li class="hidden-xs"><a href="/dangnhap">Đăng nhập</a></li>
+								<!--  data-toggle="modal" data-target="#login-modal" -->
+							</ul>
+							<ul class="aa-head-top-nav-right" th:if="${#request.userPrincipal != null}">
+								<li class="hidden-xs"><a href="/dangky">Chào, <span th:text="${#request.userPrincipal.name}"></span></a></li>
+								<li class="hidden-xs"><a href="/signout">Đăng xuất</a></li>
+								<!--  data-toggle="modal" data-target="#login-modal" -->
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- / header top  -->
+
+	<!-- start header bottom  -->
+	<div class="aa-header-bottom">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="aa-header-bottom-area">
+
+						<!-- logo  -->
+						<div class="aa-logo">
+							<!-- Text based logo -->
+							<!-- <a href="index.html">
+<span class="fa fa-shopping-cart"></span>
+<p>daily<strong>Shop</strong> <span>Your Shopping Partner</span></p>
+</a>-->
+							<!-- img based logo -->
+							<a href="index.html"><img src="images/logo.png"
+								alt="logo img" width="100%"></a>
+						</div>
+						<!-- / logo  -->
+
+						<!-- Shipping service -->
+						<div class="aa-shipping-box">
+							<a class="aa-shipping-boxsmall"> <span
+								class="aa-shipping-boxsmall-icon fas fa-shipping-fast"></span> <span
+								class="aa-shipping-box-text">
+									<div class="aa-shipping-title">Miễn phí vận chuyển</div>
+									<div class="">Khu vực TP HCM</div>
+							</span>
+
+							</a> <a class="aa-shipping-boxsmall"> <span
+								class="aa-shipping-boxsmall-icon fas fa-phone"></span> <span
+								class="aa-shipping-box-text">
+									<div class="aa-shipping-title">Hỗ trợ: 037.7026.186</div>
+									<div class="">Tư vấn 24/7 miễn phí</div>
+							</span>
+
+							</a> <a class="aa-shipping-boxsmall"> <span
+								class="aa-shipping-boxsmall-icon fas fa-shipping-fast"></span> <span
+								class="aa-shipping-box-text">
+									<div class="aa-shipping-title">Giao hàng toàn quốc</div>
+									<div class="">Đảm bảo uy tín, chất lượng</div>
+							</span>
+
+							</a>
+						</div>
+						<!--/Shiping Service-->
+
+						<!-- cart box -->
+						<div class="aa-cartbox">
+							<a class="aa-cart-link" href="/cart"> <span
+								class="fas fa-cart-arrow-down"></span> <span
+								class="aa-cart-title">GIỎ HÀNG</span> <span
+								class="aa-cart-notify" id="sizeCart" th:text="${listCart.size()}"></span>
+							</a>
+
+							<div class="aa-cartbox-summary">
+								<ul class="scroll-product" id="listMiniCart">
+									<li th:each="item:${listCart}"><a class="aa-cartbox-img"
+										href="#"><img th:src="@{'/images/'+${item.s.image_link}}" alt="img"></a>
+										<div class="aa-cartbox-info">
+											<h4>
+												<a href="#" th:text="${item.s.name}"></a>
+											</h4>
+											<p th:text="${item.quantity}+' x '+${item.s.price}+'VNĐ'"></p>
+										</div> <a class="aa-remove-product" href="#"><span
+											class="fa fa-times"></span></a></li>
+								</ul>
+
+								<div class="total-detailproduct">
+									<span class="aa-cartbox-total-title"> <b>Tổng:</b>
+									</span> <span class="aa-cartbox-total-price" th:text="${totalPrice}+'VNĐ'"></span>
+								</div>
+
+								<a class="aa-cartbox-checkout aa-primary-btn" th:href="@{/cart}">Chi
+									tiết</a> <a class="aa-cartbox-checkout aa-primary-btn"
+									th:href="@{/checkout}">Thanh toán</a>
+							</div>
+						</div>
+						<!-- / cart box -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- / header bottom  -->
+</header>
+<section id="menu" xmlns:th="http://www.thymeleaf.org">
+	<div class="container">
+		<div class="menu-area">
+			<!-- Navbar -->
+			<div class="navbar navbar-default" role="navigation">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse"
+						data-target=".navbar-collapse">
+						<span class="sr-only">Toggle navigation</span> <span
+							class="icon-bar"></span> <span class="icon-bar"></span> <span
+							class="icon-bar"></span>
+					</button>
+				</div>
+				<div class="navbar-collapse collapse">
+					<!-- Left nav -->
+					<ul class="nav navbar-nav">
+						<li><a th:href="@{/}">TRANG CHỦ</a></li>
+						<li><a href="/gioithieu">GIỚI THIỆU</a>
+						<li>
+						<li><a th:href="@{/sanpham}">SẢN PHẨM</span></a></li>
+						<li><a th:href="@{/tintuc}">TIN TỨC</a></li>
+						<li><a th:href="@{/chinhsach}">CHÍNH SÁCH</a></li>
+						<li><a th:href="@{/lienhe}">LIÊN HỆ</a></li>
+						<li class="aa-search">
+							<!-- search box --> <a class="aa-search-box">
+								<form action="search" method="get">
+									<input type="text" name="s" id="tags"
+										placeholder="Tìm kiếm sản phẩm.." th:value="${name}">
+									<button class="serach-box">
+										<span class="fa fa-search"></span>
+									</button>
+								</form>
+								
+						</a> <!-- / search box -->
+						</li>
+						
+					</ul>
+				</div>
+				<!--/.nav-collapse -->
+
+
+			</div>
+		</div>
+	</div>
+</section>
+<link rel="stylesheet"
+	href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.2.4.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+	$(function() {
+		var set = {};
+		set["s"] = $("#s").val();
+		var availableTags = "/autoComplete";
+		name = $("#tags");
+		$("#tags").autocomplete({
+			source : availableTags
+		});
+	});
+</script>
+
+

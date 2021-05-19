@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html  xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Nông sản 46</title>
+
+    <!-- Font awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css"
+          integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous">
+    <link href="css/font-awesome.css" rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link rel="icon" href="images/favicon.png" type="image/x-icon">
+    <!-- SmartMenus jQuery Bootstrap Addon CSS -->
+    <link href="css/jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <!-- Product view slider -->
+    <link rel="stylesheet" type="text/css" href="css/jquery.simpleLens.css">
+    <!-- slick slider -->
+    <link rel="stylesheet" type="text/css" href="css/slick.css">
+    <!-- price picker slider -->
+    <link rel="stylesheet" type="text/css" href="css/nouislider.css">
+    <!-- Theme color -->
+    <link id="switcher" href="css/theme-color/default-theme.css" rel="stylesheet">
+
+    <!-- Top Slider CSS -->
+    <link href="css/sequence-theme.modern-slide-in.css" rel="stylesheet" media="all">
+
+    <!-- Main style sheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- Google Font -->
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+</head>
+<body>
+<!-- wpf loader Two -->
+<div id="wpf-loader-two">
+    <div class="wpf-loader-two-inner">
+        <span>Loading</span>
+    </div>
+</div>
+<!-- / wpf loader Two -->
+<!-- SCROLL TOP BUTTON -->
+<a class="scrollToTop" href="#"><i class="fa fa-chevron-up"></i></a>
+<!-- END SCROLL TOP BUTTON -->
+<!--LIVE CHAT-->
+<!-- Load Facebook SDK for JavaScript -->
+<div id="fb-root"></div>
+<script>
+    window.fbAsyncInit = function() {
+        FB.init({
+            xfbml            : true,
+            version          : 'v8.0'
+        });
+    };
+
+    (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js';
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
+<!-- Your Chat Plugin code -->
+<div class="fb-customerchat"
+     attribution=setup_tool
+     page_id="115448300360414"
+     theme_color="#ff7e29"
+     logged_in_greeting="Xin chào! Chúng tôi có thể hỗ trợ gì cho bạn"
+     logged_out_greeting="Xin chào! Chúng tôi có thể hỗ trợ gì cho bạn">
+</div>
+<!--/LIVE CHAT-->
+
+
+<!-- header -->
+<th:block th:include="/_header"></th:block>
+<!--/header  -->
+
+    <section id="aa-catg-head-banner">
+        <img src="images/banner-product.png" alt="banner sản phẩm">
+        <div class="aa-catg-head-banner-area">
+            <div class="container">
+                <div class="aa-catg-head-banner-content">
+                    <h2>TIN TỨC</h2>
+                    <ol class="breadcrumb">
+                        <li><a th:href="@{/}">Trang chủ</a></li>
+                        <li style="color:#fff">Tin tức</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+<section id="aa-latest-blog">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="aa-latest-blog-area">
+                    <div class="row">
+                        <!-- single latest blog -->
+                        <div class="col-md-4 col-sm-4">
+                            <div class="aa-latest-blog-single">
+                                <figure class="aa-blog-img">
+                                    <a href="#"><img src="img/new-list-1.jpg" alt="img"></a>
+                                    <figcaption class="aa-blog-img-caption">
+                                        <span href="#"><i class="fa fa-clock-o"></i>2020-10-25</span>
+                                    </figcaption>
+                                </figure>
+                                <div class="aa-blog-info">
+                                    <h3 class="aa-blog-title"><a href="#">Thực phẩm sạch tăng mạnh sau dịch Covid-19</a></h3>
+                                    <p>Trong giai đoạn dịch Covid-19 bùng phát, ý thức về việc nâng cao sức khỏe của người dân ngày...</p>
+                                    <a href="https://baotainguyenmoitruong.vn/thuc-pham-sach-tang-manh-sau-dich-covid-19-304014.html" target="_blank" class="aa-read-mor-btn">Xem thêm <span class="fa fa-long-arrow-right"></span></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- single latest blog -->
+                        <div class="col-md-4 col-sm-4">
+                            <div class="aa-latest-blog-single">
+                                <figure class="aa-blog-img">
+                                    <a href="#"><img src="img/new-list-2.jpg" alt="img"></a>
+                                    <figcaption class="aa-blog-img-caption">
+                                        <span href="#"><i class="fa fa-clock-o"></i>2020-10-25</span>
+                                    </figcaption>
+                                </figure>
+                                <div class="aa-blog-info">
+                                    <h3 class="aa-blog-title"><a href="#">Phát hiện loại rau củ chứa chất chữa được bệnh nan y</a></h3>
+                                    <p>Rau củ "siêu giàu" vitamin A đã giúp các nhà khoa học tạo ra thuốc chữa...</p>
+                                    <a href="https://nld.com.vn/suc-khoe/phat-hien-loai-rau-cu-chua-chat-chua-duoc-benh-nan-y-20181226104711481.htm" target="_blank" class="aa-read-mor-btn">Xem thêm <span class="fa fa-long-arrow-right"></span></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- single latest blog -->
+                        <div class="col-md-4 col-sm-4">
+                            <div class="aa-latest-blog-single">
+                                <figure class="aa-blog-img">
+                                    <a href="#"><img src="img/new-list-3.jpg" alt="img"></a>
+                                    <figcaption class="aa-blog-img-caption">
+                                        <span href="#"><i class="fa fa-clock-o"></i>2020-10-25</span>
+                                    </figcaption>
+                                </figure>
+                                <div class="aa-blog-info">
+                                    <h3 class="aa-blog-title"><a href="#">Phù phép rau chợ đầu mối thành rau sạch tuồn vào trường học</a></h3>
+                                    <p>Rau mua ngoài chợ, sau đó được sơ chế và phù phép thành các loại rau an toàn, rồi chuyển đến...</p>
+                                    <a href="https://cafef.vn/nong-thuy-san/phu-phep-rau-cho-dau-moi-thanh-rau-sach-tuon-vao-truong-hoc-2016011510445817.chn" target="_blank" class="aa-read-mor-btn">Xem thêm <span class="fa fa-long-arrow-right"></span></a>
+                                </div>
+                            </div>
+                        </div><div class="col-md-4 col-sm-4">
+                            <div class="aa-latest-blog-single">
+                                <figure class="aa-blog-img">
+                                    <a href="https://afamily.vn/16-loai-cay-co-the-moc-lai-mot-cach-ky-dieu-ma-khong-can-mua-cay-con-20170722090451484.chn" target="_blank"><img src="img/new-list-4.jpg" alt="img"></a>
+                                    <figcaption class="aa-blog-img-caption">
+                                        <span href="#"><i class="fa fa-clock-o"></i>2020-10-25</span>
+                                    </figcaption>
+                                </figure>
+                                <div class="aa-blog-info">
+                                    <h3 class="aa-blog-title"><a href="https://afamily.vn/16-loai-cay-co-the-moc-lai-mot-cach-ky-dieu-ma-khong-can-mua-cay-con-20170722090451484.chn" target="_blank">16 loại cây có thể mọc lại một cách kỳ diệu mà không cần mua cây con</a></h3>
+                                    <p>Bạn sẽ không mất nhiều thời gian chọn giống, gieo trồng hay mua cây con ngoài cửa hàng...</p>
+                                    <a href="https://afamily.vn/16-loai-cay-co-the-moc-lai-mot-cach-ky-dieu-ma-khong-can-mua-cay-con-20170722090451484.chn" target="_blank" class="aa-read-mor-btn">Xem thêm <span class="fa fa-long-arrow-right"></span></a>
+                                </div>
+                            </div>
+                        </div><div class="col-md-4 col-sm-4">
+                            <div class="aa-latest-blog-single">
+                                <figure class="aa-blog-img">
+                                    <a href="https://afamily.vn/6-loai-rau-cu-nang-suat-nhat-de-trong-trong-khu-vuon-nho-cua-ban-20180703093206956.chn" target="_blank"><img src="img/new-list-5.jpg" alt="img"></a>
+                                    <figcaption class="aa-blog-img-caption">
+                                        <span href="#"><i class="fa fa-clock-o"></i>2020-10-25</span>
+                                    </figcaption>
+                                </figure>
+                                <div class="aa-blog-info">
+                                    <h3 class="aa-blog-title"><a href="https://afamily.vn/6-loai-rau-cu-nang-suat-nhat-de-trong-trong-khu-vuon-nho-cua-ban-20180703093206956.chn" target="_blank">6 loại rau củ năng suất nhất để trồng trong khu vườn nhỏ của bạn</a></h3>
+                                    <p>Tự trồng rau củ là một cách tuyệt vời giúp cải thiện không khí và môi trường sống quanh nhà...</p>
+                                    <a href="https://afamily.vn/6-loai-rau-cu-nang-suat-nhat-de-trong-trong-khu-vuon-nho-cua-ban-20180703093206956.chn" target="_blank" class="aa-read-mor-btn">Xem thêm <span class="fa fa-long-arrow-right"></span></a>
+                                </div>
+                            </div>
+                        </div><div class="col-md-4 col-sm-4">
+                            <div class="aa-latest-blog-single">
+                                <figure class="aa-blog-img">
+                                    <a href="https://vnexpress.net/thoi-su/kim-ngach-xuat-khau-rau-qua-7-thang-dau-nam-giam-1-9-3990411.html" target="_blank"><img src="img/new-list-6.jpg" alt="img"></a>
+                                    <figcaption class="aa-blog-img-caption">
+                                        <span href="#"><i class="fa fa-clock-o"></i>2020-10-25</span>
+                                    </figcaption>
+                                </figure>
+                                <div class="aa-blog-info">
+                                    <h3 class="aa-blog-title"><a href="https://vnexpress.net/thoi-su/kim-ngach-xuat-khau-rau-qua-7-thang-dau-nam-giam-1-9-3990411.html" target="_blank">Kim ngạch xuất khẩu rau quả 7 tháng đầu năm giảm 1,9%</a></h3>
+                                    <p>Thống kê của Tổng cục Hải quan, kim ngạch xuất khẩu rau quả cả nước 7 tháng đạt...</p>
+                                    <a href="https://vnexpress.net/thoi-su/kim-ngach-xuat-khau-rau-qua-7-thang-dau-nam-giam-1-9-3990411.html" target="_blank" class="aa-read-mor-btn">Xem thêm <span class="fa fa-long-arrow-right"></span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- footer -->
+<th:block th:include="/_footer"></th:block>
+<!--/footer  -->
+<!-- jQuery library -->
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="js/bootstrap.js"></script>
+<!-- SmartMenus jQuery plugin -->
+<script type="text/javascript" src="js/jquery.smartmenus.js"></script>
+<!-- SmartMenus jQuery Bootstrap Addon -->
+<script type="text/javascript" src="js/jquery.smartmenus.bootstrap.js"></script>
+<!-- To Slider JS -->
+<script src="js/sequence.js"></script>
+<script src="js/sequence-theme.modern-slide-in.js"></script>
+<!-- Product view slider -->
+<script type="text/javascript" src="js/jquery.simpleGallery.js"></script>
+<script type="text/javascript" src="js/jquery.simpleLens.js"></script>
+<!-- slick slider -->
+<script type="text/javascript" src="js/slick.js"></script>
+<!-- Price picker slider -->
+<script type="text/javascript" src="js/nouislider.js"></script>
+<!-- Custom js -->
+<script src="js/custom.js"></script>
+</body>
+</html>
