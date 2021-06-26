@@ -4,9 +4,12 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 
 @Entity
-@Table(name = "roles")
+@Table(name = "roles" , //
+uniqueConstraints = { //
+        @UniqueConstraint(name = "app_role_uk", columnNames = "name") })
 public class AppRole {
 
 	@Id

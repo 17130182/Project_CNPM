@@ -11,9 +11,12 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 
 @Entity
-@Table(name = "user_role")
+@Table(name = "user_role", //
+uniqueConstraints = { //
+        @UniqueConstraint(name = "user_role_uk", columnNames = { "user_id", "role_id"}) })
 public class UserRole {
 	
 	@Id
@@ -21,7 +24,7 @@ public class UserRole {
 	@Column(name = "id", nullable = false)
 	private int id;
 
-	@ManyToOne(fetch = FetchType.EAGER,cascade=CascadeType.ALL)
+	@ManyToOne(fetch = FetchType.LAZY, cascade=CascadeType.ALL)
 	@JoinColumn(name = "user_id", nullable = false)
 	private User user;
 

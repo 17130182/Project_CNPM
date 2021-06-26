@@ -44,12 +44,11 @@ public class UserRoleController_Admin {
 		return "redirect:/admin/danhsachphanquyen";
 	}
 
-	@PostMapping("/xoaquyen")
-	public String xoaUserRole(Model req, @RequestParam("id") String id) {
-		int dele = Integer.parseInt(id);
-		urService.delete(dele);
-		return "redirect:/admin/danhsachphanquyen";
-	}
+	/*
+	 * @GetMapping("/xoaquyen") public String xoaUserRole(Model
+	 * req, @RequestParam("id") String id) { int dele = Integer.parseInt(id);
+	 * urService.delete(dele); return "redirect:/admin/danhsachphanquyen"; }
+	 */
 
 	@GetMapping("/suaphanquyen")
 	public String suaUserRole(Model req, @RequestParam("id") String id) {
