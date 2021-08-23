@@ -4390,3 +4390,9 @@ a.aa-product-img img {
   margin-left: auto;
   margin-right: auto;
 }
+.container-pagination{
+	display: inline;
+    float: left;
+    text-align: center;
+    width: 100%;
+}

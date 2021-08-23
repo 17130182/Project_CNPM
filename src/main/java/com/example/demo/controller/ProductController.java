@@ -4,9 +4,14 @@ import java.security.Principal;
 import java.sql.SQLException;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 
+import org.hibernate.annotations.Parameter;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,11 +25,13 @@ import com.example.demo.entity.Catalog;
 import com.example.demo.entity.Product;
 import com.example.demo.entity.Review;
 import com.example.demo.entity.User;
+import com.example.demo.models.Pagination;
 import com.example.demo.services.CartServices;
 import com.example.demo.services.CatalogService;
 import com.example.demo.services.ProductService;
 import com.example.demo.services.ReviewService;
 import com.example.demo.services.UserServices;
+import com.example.demo.tools.Tools;
 
 
 
@@ -93,15 +100,25 @@ public class ProductController {
 	}
 	 
 	 @GetMapping("/sanpham")
-	 public String sanPham(Model req) {
-		 List<Product> productlist = productService.getAll();
-		 req.addAttribute("productlist", productlist);
+	 public String sanPham(Model req,@RequestParam(required = false) Integer _page,@RequestParam(required = false) Integer _limit ) {
+		 List<Product> productlist = productService.getAll();// get all data product
+//		 pagination{
+		 //default value
+		 int totalProduct = productlist.size();
+		 int page = _page == null ? 1:_page ;
+		 int limit = _limit == null ? 10:_limit;
+		 int start = (page-1)*limit;
+		 req.addAttribute("pagination",new Pagination(limit, page,(int) Math.round(totalProduct/limit+0.5)));
+		 req.addAttribute("productlist",  Tools.copyArrayList(productlist,start,limit));
+//		 }
+		 
 		 List<Catalog> catelist = catalogService.getAllCatalog();
 		 req.addAttribute("catelist", catelist);
 		 req.addAttribute("listCart", cart.listCartItems());
 		 req.addAttribute("totalPrice", cart.getPriceTotal());
 		 return "product";
 	 }
+
 
 		@GetMapping("/chitietsanpham")
 		public String chiTietSanPham(@RequestParam("id") String id, Model req, Principal u ) {
@@ -124,12 +141,24 @@ public class ProductController {
 			return "product-detail";
 		}
 	 @GetMapping("/danhmucsanpham")
-	 public String sanPhamtheodanhmuc(@RequestParam("id") String id, Model req) {
+	 public String sanPhamtheodanhmuc(@RequestParam("id") String id, Model req,@RequestParam(required = false) Integer _page,@RequestParam(required = false) Integer _limit ) {
 		 int id2 = Integer.parseInt(id);
 		 List<Catalog> catelist = catalogService.getAllCatalog();
 		 req.addAttribute("catelist", catelist);
 		 List <Product> productbycatalog = productService.getProductByCatalog(id2);
-		 req.addAttribute("productbycatalog", productbycatalog);
+		 
+//		 pagination{
+		 //default value
+		 int totalProduct = productbycatalog.size();
+		 int page = _page == null ? 1:_page ;
+		 int limit = _limit == null ? 10:_limit;
+		 int start = (page-1)*limit;
+		 req.addAttribute("pagination",new Pagination(limit, page,(int) Math.round(totalProduct/limit+0.5)));
+		 req.addAttribute("productbycatalog",  Tools.copyArrayList(productbycatalog,start,limit));
+//		 }
+	
+		 
+//		 req.addAttribute("productbycatalog", productbycatalog);
 		 req.addAttribute("listCart", cart.listCartItems());
 		 req.addAttribute("totalPrice", cart.getPriceTotal());
 		return "product-cate";	

@@ -50,4 +50,10 @@ public class Catalog {
 		this.parent_id = parent_id;
 	}
 
+	@Override
+	public String toString() {
+		return "Catalog [id=" + id + ", name=" + name + ", parent_id=" + parent_id + "]";
+	}
+	
+
 }
