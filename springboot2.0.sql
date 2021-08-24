@@ -48,8 +48,8 @@ INSERT INTO roles VALUES
 ('ROLE_USER');
 
 INSERT INTO users VALUES 
-('Admin','admin@gmail.com','0123456789','minhquang','$2a$10$ZvKX1I89iN3Cek1VqKgjB.eZRQyF7.5QCBdrgnJe2MlDjayTwdPFy'),
-('User','user@gmail.com','0123456789','macduong','$2a$10$ZvKX1I89iN3Cek1VqKgjB.eZRQyF7.5QCBdrgnJe2MlDjayTwdPFy');
+('Admin','admin@gmail.com','0123456789','admin','$2a$10$wUfvCxoRy5fkMjCuOq.ISelwdAnEJBHBYWdPa8FB/LbwrkvicrfcW'),
+('User','user@gmail.com','0123456789','user','$2a$10$wUfvCxoRy5fkMjCuOq.ISelwdAnEJBHBYWdPa8FB/LbwrkvicrfcW');
 
 insert into user_role (user_id,role_id)
 values (1,1);

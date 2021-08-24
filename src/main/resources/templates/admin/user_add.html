@@ -28,6 +28,7 @@
 <link href="assets/css/sidebar-menu.css" rel="stylesheet" />
 <!-- Custom Style-->
 <link href="assets/css/app-style.css" rel="stylesheet" />
+<link href="assets/css/custom-account.css" rel="stylesheet" />
 
 </head>
 
@@ -50,33 +51,34 @@
 
 								<div class="form-group">
 									<label for="input-1">Họ tên</label> <input type="text"
-										class="form-control" id="input-2" placeholder="Nhập họ tên"
+										class="form-control" id="input-1" placeholder="Nhập họ tên"
 										name="user-name" th:field="*{name}">
+										
 								</div>
 								<div class="form-group">
 									<label for="input-2">Email</label> <input type="text"
-										class="form-control" id="input-3"
+										class="form-control" id="input-2"
 										placeholder="Nhập địa chỉ Email" name="user-email" th:field="*{email}">
 								</div>
 								<div class="form-group">
 									<label for="input-3">Số Điện Thoại</label> <input type="text"
-										class="form-control" id="input-4"
+										class="form-control" id="input-3"
 										placeholder="Nhập số điện thoại" name="user-phone" th:field="*{phone}">
 								</div>
 								<div class="form-group">
-									<label for="input-3">UserName</label> <input type="text"
-										class="form-control" id="input-5" placeholder="Nhập User Name"
+									<label for="input-4">UserName</label> <input type="text"
+										class="form-control" id="input-4" placeholder="Nhập User Name"
 										name="user-userName" th:field="*{username}">
 								</div>
 								<div class="form-group">
-									<label for="input-4">Mật khẩu</label> <input type="password"
-										class="form-control" id="myinput" placeholder="Nhập mật khẩu"
+									<label for="input-5">Mật khẩu</label> <input type="password"
+										class="form-control" id="input-5" placeholder="Nhập mật khẩu"
 										name="user-password" th:field="*{password}"> <input type="checkbox"
 										onclick="myFunction1()">Hiển thị mật khẩu
 									<script>
 										function myFunction1() {
 											var x = document
-													.getElementById("myinput");
+													.getElementById("input-5");
 											if (x.type === "password") {
 												x.type = "text";
 											} else {
@@ -86,25 +88,25 @@
 									</script>
 								</div>
 								<div class="form-group">
-									<label for="input-5">Date</label> <input type="date"
+									<label for="the-date">Date</label> <input type="date"
 										class="form-control" id="the-date" placeholder="Ngày tạo"
 										name="user-created">
 								</div>
 								<div class="form-group">
-									<label for="input-3">Trạng thái</label> <input type="number"
-										min="0" class="form-control" id="input-5"
+									<label for="input-6">Trạng thái</label> <input type="number"
+										min="0" class="form-control" id="input-6"
 										placeholder="Nhập trạng thái" value="1" name="user-status">
 								</div>
 								<div class="form-group">
-									<label for="input-3">Quyền</label> <input type="number" min="1"
-										class="form-control" id="input-5" placeholder="Nhập quyền"
+									<label for="input-7">Quyền</label> <input type="number" min="1"
+										class="form-control" id="input-7" placeholder="Nhập quyền"
 										name="user-role">
 								</div>
 								<div class="form-footer">
 									<button class="btn btn-danger">
 										<i class="fa fa-times"></i><a href="user_list.html">Hủy</a>
 									</button>
-									<button type="submit" class="btn btn-success">
+									<button type="submit" class="btn btn-success" id="btn-submit">
 										<i class="fa fa-check-square-o"></i> Thêm
 									</button>
 								</div>
@@ -196,6 +198,7 @@
 
 	<!-- Index js -->
 	<script src="assets/js/index.js"></script>
+	<script src="assets/js/custom-account.js"></script>
 
 
 </body>
