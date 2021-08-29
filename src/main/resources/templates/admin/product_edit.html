@@ -28,6 +28,7 @@
 <link href="assets/css/sidebar-menu.css" rel="stylesheet" />
 <!-- Custom Style-->
 <link href="assets/css/app-style.css" rel="stylesheet" />
+<link href="assets/css/custom-product-edit.css" rel="stylesheet" />
 <!-- Custom Rich Text Editor -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -56,34 +57,34 @@
 								<input type="hidden" th:field="*{id}">
 								<div class="form-group">
 									<label for="input-1">TÊN SẢN PHẨM</label> <input type="text"
-										class="form-control" id="input-2" placeholder="Tên sản phẩm"
+										class="form-control" id="input-1" placeholder="Tên sản phẩm"
 										name="product-name" th:field="*{name}">
 								</div>
 								<input type="hidden" th:field="*{image_link}">
 								<div class="form-group">
 									<label for="input-2">ID DANH MỤC</label> <input type="text"
-										class="form-control" id="input-4" placeholder="id danh mục"
+										class="form-control" id="input-2" placeholder="id danh mục"
 										name="cate-id" th:field="*{catalog.id}">
 								</div>
 								<div class="form-group">
-									<label for="input-2">GIÁ</label> <input type="text"
-										class="form-control" id="input-5" placeholder="Giá"
+									<label for="input-3">GIÁ</label> <input type="text"
+										class="form-control" id="input-3" placeholder="Giá"
 										name="price" th:field="*{price}">
 								</div>
-								<div class="">
-									<label for="input-2">CONTENT</label>
-									<textarea class="content" rows="10" required id="contentzzz"
+								<div class="form-group">
+									<label for="input-4">CONTENT</label>
+									<textarea class="content" rows="10" required id="input-4"
 										name="content" th:field="*{content}"></textarea>
 								</div>
-								<div class="">
-									<label for="input-2">DESCIPTION</label>
+								<div class="form-group">
+									<label for="input-5">DESCIPTION</label>
 									<textarea class="contentx" rows="5" required
-										id="descriptionzzz" name="description"
+										id="input-5" name="description"
 										th:field="*{description}"></textarea>
 								</div>
 								<div class="form-group">
-									<label for="input-2">GIẢM GIÁ</label> <input type="text"
-										class="form-control" id="input-8" placeholder="Giảm giá"
+									<label for="input-6">GIẢM GIÁ</label> <input type="text"
+										class="form-control" id="input-6" placeholder="Giảm giá"
 										name="discount" th:field="*{discount}">
 								</div>
 								<div class="form-group">
@@ -95,7 +96,7 @@
 										<i class="fa fa-times"></i><a
 											th:href="@{/admin/danhsachsanpham}">Hủy</a>
 									</button>
-									<button type="submit" class="btn btn-success">
+									<button type="submit" id="btn-submit" class="btn btn-success">
 										<i class="fa fa-check-square-o"></i>Lưu lại
 									</button>
 								</div>
@@ -198,6 +199,7 @@
 
 	<!-- Index js -->
 	<script src="assets/js/index.js"></script>
+	<script src="assets/js/custom-product-edit.js"></script>
 
 
 </body>

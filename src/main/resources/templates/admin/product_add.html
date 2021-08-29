@@ -28,6 +28,7 @@
 <link href="assets/css/sidebar-menu.css" rel="stylesheet" />
 <!-- Custom Style-->
 <link href="assets/css/app-style.css" rel="stylesheet" />
+<link href="assets/css/custom-product.css" rel="stylesheet" />
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
@@ -51,11 +52,11 @@
 								th:object="${addproduct}" enctype="multipart/form-data">
 								<div class="form-group">
 									<label for="input-1">TÊN SẢN PHẨM</label> <input type="text"
-										class="form-control" id="input-2" placeholder="Tên sản phẩm"
+										class="form-control" id="input-1" placeholder="Tên sản phẩm"
 										name="product-name" th:field="*{name}">
 								</div>
 								<div class="form-group">
-									<label for="input-2">HÌNH ẢNH</label>
+									<label for="imgInp">HÌNH ẢNH</label>
 									<div class="custom-file">
 										<p id="imgInfo">You have no image!</p>
 										<br /> <input type="file" id="imgInp" name="file" required><br />
@@ -67,38 +68,44 @@
 								</div>
 								<div class="form-group">
 									<label for="input-2">ID DANH MỤC</label> <input type="text"
-										class="form-control" id="input-4" placeholder="id danh mục"
-										name="cate-id" th:field="*{catalog.id}">
+										class="form-control" id="input-2" placeholder="id danh mục"
+										name="cate-id" th:field="*{catalog.id}" >
+										<script th:inline="javascript">
+											const catalog = /*[[${catalog?.id}]]*/ {};
+											if(catalog===null){
+												document.getElementById('input-2').value=1;
+											}
+										</script>
 								</div>
 								<div class="form-group">
-									<label for="input-2">GIÁ</label> <input type="text"
-										class="form-control" id="input-5" placeholder="Giá"
+									<label for="input-3">GIÁ</label> <input type="text"
+										class="form-control" id="input-3" placeholder="Giá"
 										name="price" th:field="*{price}">
 								</div>
 								<div class="form-group">
-									<label for="input-2">CONTENT</label> <input type="text"
-										class="form-control" id="input-6" placeholder="Content"
+									<label for="input-4">CONTENT</label> <input type="text"
+										class="form-control" id="input-4" placeholder="Content"
 										name="content" th:field="*{content}">
 								</div>
 								<div class="form-group">
-									<label for="input-2">DESCIPTION</label> <input type="text"
-										class="form-control" id="input-7" placeholder="Desciption"
+									<label for="input-5">DESCIPTION</label> <input type="text"
+										class="form-control" id="input-5" placeholder="Desciption"
 										name="status" th:field="*{description}">
 								</div>
 								<div class="form-group">
-									<label for="input-2">GIẢM GIÁ</label> <input type="text"
-										class="form-control" id="input-8" placeholder="Giảm giá"
+									<label for="input-6">GIẢM GIÁ</label> <input type="text"
+										class="form-control" id="input-6" placeholder="Giảm giá"
 										name="discount" th:field="*{discount}">
 								</div>
 								<div class="form-group">
-									<label>Ngày tạo</label> <input type="date" class="form-control"
+									<label for="the-date">Ngày tạo</label> <input type="date" class="form-control"
 										id="the-date" name="new-created" th:field="*{created}">
 								</div>
 								<div class="form-footer">
 									<button class="btn btn-danger">
-										<i class="fa fa-times"></i><a href="product_list.html">Hủy</a>
+										<i class="fa fa-times"></i><a href="/admin/danhsachsanpham">Hủy</a>
 									</button>
-									<button type="submit" class="btn btn-success">
+									<button type="submit" id="btn-submit" class="btn btn-success">
 										<i class="fa fa-check-square-o"></i> Thêm
 									</button>
 								</div>
@@ -216,6 +223,7 @@
 			readURL(this);
 		});
 	</script>
+<script src="assets/js/custom-product-add.js"></script>
 
 
 </body>

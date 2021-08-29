@@ -335,7 +335,7 @@
     <!-- Custom js -->
 
     <script th:inline="javascript">
-      var pagination = [[${pagination}]];
+      var pagination = /*[[${pagination}]]*/ {};
       $('#pagination').twbsPagination({
         totalPages: pagination.totalPage,
         visiblePages: 3,

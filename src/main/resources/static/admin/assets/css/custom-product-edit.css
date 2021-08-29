@@ -1,0 +1,11 @@
+.form-group.error .richText {
+  border: 3px solid #e74c3c;
+  margin-bottom: 5px;
+}
+.form-group.error input:focus {
+  border: 0px;
+}
+.form-group.error.error .error__message {
+  color: #e74c3c;
+  margin-left: 5px;
+}
