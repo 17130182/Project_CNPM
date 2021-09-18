@@ -31,7 +31,6 @@ public class UserController {
 		req.addAttribute("totalPrice", cart.getPriceTotal());
 		 return "login";
 	 }
-	
 	@RequestMapping(value = { "/checkRole" })
 	public String checkRole(Principal user) throws SQLException, IOException {
 		if (us.getDefaultRole(user.getName()).equalsIgnoreCase("Admin")) {
